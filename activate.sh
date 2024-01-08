@@ -1,7 +1,7 @@
 
 elevation_bash_utils_repo_activate_sh() {
   REPO_ROOT="$PWD"
-  while ! test -e "$REPO_ROOT/elevationtools_bash_utils_repo_root_marker"; do
+  while ! test -e "$REPO_ROOT/elevation_bash_utils_repo_root_marker"; do
     prev_REPO_ROOT="$REPO_ROOT"
     REPO_ROOT="$(dirname "$REPO_ROOT")"
     if test "$REPO_ROOT" = "prev_REPO_ROOT"; then
