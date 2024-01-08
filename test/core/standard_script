@@ -1,0 +1,17 @@
+#!/usr/bin/env bats
+
+. "$ELEVATION_BASH_UTILS/core/standard_script.bash"
+
+@test "main is called with args" {
+  run "$BATS_TEST_DIRNAME/standard_script_impl" "foo" "bar"
+  expected="$(cat <<EOF
+main called with:
+  foo
+  bar
+from: $BATS_TEST_DIRNAME
+EOF
+)"
+  [ "$status" = 0 ]
+  [ "$expected" = "$output" ]
+}
+

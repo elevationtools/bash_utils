@@ -1,0 +1,16 @@
+#!/usr/bin/env bats
+
+. "$ELEVATION_BASH_UTILS/core/dedup_colon_separated_string.bash"
+
+@test "removes dups" {
+  actual="$(elevation::dedup_colon_separated_string "foo:foo:bar:foo:bar")"
+  expected=foo:bar
+  [ "$actual" = "$expected" ]
+}
+
+@test "doesn't change ok string" {
+  actual="$(elevation::dedup_colon_separated_string "bar:foo")"
+  expected=bar:foo
+  [ "$actual" = "$expected" ]
+}
+
