@@ -1,3 +1,4 @@
 [submodule "deps/mako"]
 	path = deps/mako
-	url = git@github.com:elevationtools/mako.git
+	url = https://github.com/elevationtools/mako.git
+  branch = main
